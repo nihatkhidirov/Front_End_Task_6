@@ -1,0 +1,81 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* vh verdikde scroll yaranmir */
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: url("../photoes/png-transparent-clock-face-analog-clock-without-hands-angle-white-text-thumbnail-removebg-preview.png")
+    no-repeat center;
+  background-size: cover;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.hand {
+  position: absolute;
+  width: 50%;
+  height: 6px;
+  background: black;
+  top: 49%;
+  left: 50%;
+  transform-origin: 0%;
+  transform: rotate(60deg);
+}
+
+.hour-hand {
+  height: 8px;
+  width: 35%;
+  background: black;
+  /* 1 SAAT=60 DEQIQE, 360 DERECE FIRLANSA, SAAT EQREBINDE 12 SAAT OLDUGU UCUN, UMUMILIKDE 12*60*60=43200 SANIYE OLMALIDIR */
+  animation: rotateHour 43200s linear infinite;
+}
+
+.minute-hand {
+  height: 6px;
+  width: 45%;
+  background: black;
+  /* 1DEQIQE=60 SANIYE, 360 DERECE UCUN 60*60=3600SANIYE */
+  animation: rotateMinute 3600s linear infinite;
+}
+
+.second-hand {
+  height: 4px;
+  width: 50%;
+  background: red;
+  animation: rotateSecond 60s linear infinite;
+}
+
+@keyframes rotateHour {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateMinute {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateSecond {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
